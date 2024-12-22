@@ -21,12 +21,23 @@ namespace DotNetCoreRepositorywithEF.Repository
         //}
         public Tutorial Add(Tutorial tutorial)
         {
-            throw new NotImplementedException();
+
+            _context.Add(tutorial);
+            _context.SaveChanges();
+            return tutorial;
+
         }
 
         public Tutorial Delete(int id)
         {
-            throw new NotImplementedException();
+
+            var tutorial = _context.Tutorials.Find(id);
+            if (tutorial != null)
+            {
+                _context.Tutorials.Remove(tutorial);
+                _context.SaveChanges();
+            }
+            return tutorial;
         }
 
         public IEnumerable<Tutorial> GetAllTutorials()
@@ -36,12 +47,16 @@ namespace DotNetCoreRepositorywithEF.Repository
 
         public Tutorial GetTutorial(int id)
         {
-            throw new NotImplementedException();
+            var tutorial = _context.Tutorials.Find(id);
+            return tutorial;
         }
 
-        public Tutorial Update(int id, Tutorial tutorial)
+        public Tutorial Update(Tutorial tutorial)
         {
-            throw new NotImplementedException();
+            _context.Update(tutorial);
+            _context.SaveChanges();
+            return tutorial;
         }
+
     }
 }

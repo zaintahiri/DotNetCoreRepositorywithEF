@@ -9,7 +9,7 @@ namespace DotNetCoreRepositorywithEF.Repository
         IEnumerable<Tutorial> GetAllTutorials();
         Tutorial GetTutorial(int id);
 
-        Tutorial Update(int id, Tutorial tutorial);
+        Tutorial Update(Tutorial tutorial);
 
     }
 }

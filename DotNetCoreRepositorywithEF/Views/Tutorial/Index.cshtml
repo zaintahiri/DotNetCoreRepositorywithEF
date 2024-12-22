@@ -5,12 +5,14 @@
     Layout = "_Layout";
 }
 
+<a class="text-dark btn btn-primary" asp-controller="Tutorial" asp-action="AddTutorial">Add Tutorial</a>
 <table class="table table-striped">
     <thead>
         <tr>
             <th>ID</th>
             <th>Name</th>
             <th>Description</th>
+            <th></th>
             <th></th>
         </tr>
     </thead>
@@ -20,8 +22,25 @@
             <td>@item.Id</td>
             <td>@item.Name</td>
             <td>@item.Description</td>
-            <td></td>
+            <td>
+                <a class="btn btn-primary" asp-controller="tutorial" 
+                        asp-action="EditTutorial" asp-route-id="@item.Id"
+                        >Edit</a>
+            </td>
+            <td>
+                <a class="btn btn-danger" asp-controller="tutorial" 
+                        asp-action="DeleteTutorial" asp-route-id="@item.Id" onclick="return confrimDelete()">Delete</a>
+            </td>
         </tr>
 }
     </tbody>
 </table>
+
+<script>
+function confrimDelete() 
+{
+    confirm("Are you sure, You want to Delete");
+}
+</script>
+
+
