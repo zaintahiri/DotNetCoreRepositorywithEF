@@ -13,6 +13,8 @@ namespace DotNetCoreRepositorywithEF.Models
 
         [Required]
         public string Description { get; set; }
+
+        public List<Article> Articles { get; set; }
         
     }
 }

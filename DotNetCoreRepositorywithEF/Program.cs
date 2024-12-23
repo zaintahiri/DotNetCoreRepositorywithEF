@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<ITutorialRepository, TutorialRepository>();
+builder.Services.AddScoped<IArticleRepository, ArticleRepository>();
 var TutorialDBConnection=builder.Configuration.GetConnectionString("TutorialDBConnection");
 builder.Services.AddDbContext<TutorialDBContext>(options => options.UseSqlServer(TutorialDBConnection));
 var app = builder.Build();
