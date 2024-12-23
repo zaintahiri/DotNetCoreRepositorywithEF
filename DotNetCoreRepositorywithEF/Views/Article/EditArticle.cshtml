@@ -1,0 +1,36 @@
+﻿@model Article;
+@{
+    ViewBag.Title = "Edit Data";
+}
+
+<h1>Edit Article</h1>
+<div class="row text">
+    <div col="col-8-md offset-2">
+        <form method="post" asp-controller="Article" asp-action="EditArticle">
+            <input type="hidden" asp-for="ArticleId"/>
+            <input type="hidden" asp-for="TutorialId"/>
+            <div class="row text">
+                <div col="col-8-md offset-2">
+                    <div class="form-group mb-3">
+                        <label asp-for="ArticleTitle" class="control-lable"></label>
+                        <input type="text" asp-for="ArticleTitle" class="form-control" />
+                        <span asp-validation-for="ArticleTitle" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="ArticleContent" class="control-lable"></label>
+                        <input type="text" asp-for="ArticleContent" class="form-control" />
+                        <span asp-validation-for="ArticleContent" class="text-danger"></span>
+                    </div>
+                   
+                    <div class="form-group mb-3">
+                        <button type="submit"  class="btn btn-outline-success float-end">Save</button>
+                        <a asp-controller="article" asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </form>
+        
+    </div>
+</div>

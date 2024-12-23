@@ -9,6 +9,7 @@ namespace DotNetCoreRepositorywithEF.Repository
         Article DeleteAtricle(int id);
         Article GetAtricle(int id);
         IEnumerable<Article> GetAtricles();
+        IEnumerable<Tutorial> GetTutorials();
         IEnumerable<Article> GetAtriclesByTutorialId(int tutorialId);
 
 

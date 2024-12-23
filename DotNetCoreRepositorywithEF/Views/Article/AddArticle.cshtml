@@ -1,0 +1,39 @@
+﻿@model DotNetCoreRepositorywithEF.ViewModels.AritcleViewModel;
+
+@{
+    ViewBag.Title = "Create Article";
+}
+<h1>Add New Article</h1>
+<div class="row text">
+    <div col="col-8-md offset-2">
+        <form method="post" asp-controller="Article" asp-action="AddArticle">
+            <div class="row text">
+                <div col="col-8-md offset-2">
+                    <div class="form-group mb-3">
+                        <label asp-for="ArticleTitle" class="control-lable"></label>
+                        <input type="text" asp-for="ArticleTitle" class="form-control" />
+                        <span asp-validation-for="ArticleTitle" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="ArticleContent" class="control-lable"></label>
+                        <input type="text" asp-for="ArticleContent" class="form-control" />
+                        <span asp-validation-for="ArticleContent" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label class="control-lable">Please select tutorial</label>
+                        <select asp-for="TutorialId" asp-items="ViewBag.Tutorials" class="form-control"></select>
+                    </div>
+                    <div class="form-group mb-3">
+                        <button type="submit"  class="btn btn-outline-success float-end">Save</button>
+                        <a asp-controller="tutorial" asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </form>
+        
+    </div>
+</div>
+
+

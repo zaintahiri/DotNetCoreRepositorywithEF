@@ -47,6 +47,11 @@ namespace DotNetCoreRepositorywithEF.Repository
             return articles;
         }
 
+        public IEnumerable<Tutorial> GetTutorials()
+        {
+            return _context.Tutorials.ToList();
+        }
+
         public Article UpdateAtricle(Article article)
         {
             _context.Articles.Update(article);
